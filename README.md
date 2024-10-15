@@ -1,15 +1,21 @@
 # $${\color{orange} \textbf{Project}: \textbf{Student}  \ \textbf{App}}$$
 
 
- ### $\color{{green} \ \textbf{Prerequisite:}}$ 
+**Installations:**
+
+Launch EC2
+
 Java-1.8
+
 Tomcat
+
 Git
+
 RDS
-Launch
-EC2**
- 
-**Instance**
+
+
+**Security Group**
+
 Allow Ports in security group: 22 = SSH 8080 = Tomcat 3306 = Mysql / Mariadb  80=http
 
 **launch instance**
@@ -28,29 +34,41 @@ yum install java-1.8* -y
 
 
 wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz
+
 tar -xvzf apache-tomcat-9.0.96.tar.gz -C /opt/
  
 cd  apache-tomcat-8.5.99.zip 
+
 cd bin 
+
 [catalina.sh  -->this file is neccessary to start tomcat] 
+
 chmod +x catalina.sh     [ give execute permission to file] 
+
 Start
+
 Stop
  
-Tomcat
+**Tomcat**
+
 sh catalina.sh start   [ tomcat started ]
+
 sh catalina.sh stop 
+
 go to browser and public ip:8080
 
 **SetUp Student Application**
 
 yum install git -y 
+
 git clone https://github.com/abhipraydhoble/Student-App-Project.git 
+
 cd Student-App-Project 
 
 **copt file from the git directrory to the tomcat**
 
 cp Student-App-Project/student.war apache-tomcat-8.5.93/webapps/ 
+
 cp Student-App-Project/mysql-connector.jar apache-tomcat-8.5.93/lib/ 
 
 
